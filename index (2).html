@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Oral Cancer Awareness Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-dark': '#4A49B8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(93, 92, 222, 0.3);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #5D5CDE;
+            border-radius: 2px;
+        }
+
+        .cancer-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .cancer-card:hover {
+            border-left-color: #5D5CDE;
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .uploaded-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .reference-link {
+            color: #5D5CDE;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .reference-link:hover {
+            color: #4A49B8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-primary dark:bg-primary-dark shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-ribbon text-white text-2xl"></i>
+                    <span class="text-white font-bold text-lg sm:text-xl">Oral Cancer Awareness</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#types" class="text-white hover:text-gray-200 transition text-sm sm:text-base hidden sm:inline">Types</a>
+                    <a href="#prevention" class="text-white hover:text-gray-200 transition text-sm sm:text-base hidden sm:inline">Prevention</a>
+                    <a href="#references" class="text-white hover:text-gray-200 transition text-sm sm:text-base">References</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in-up">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">World Oral Cancer Awareness Day</h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 opacity-90">Observed annually to raise awareness about oral cancer prevention, early detection, and treatment</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
+                        <i class="fas fa-calendar-day text-2xl mb-2"></i>
+                        <p class="text-sm font-semibold">Every Year</p>
+                        <p class="text-lg">April 10th</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
+                        <i class="fas fa-ribbon text-2xl mb-2"></i>
+                        <p class="text-sm font-semibold">Awareness Color</p>
+                        <p class="text-lg">Burgundy & Ivory</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-12 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Jordan Statistics -->
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">
+                <i class="fas fa-flag mr-2 text-primary"></i>Oral Cancer in Jordan
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base">Kingdom of Jordan Statistics</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="stat-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-users text-primary text-4xl mb-3"></i>
+                    <h3 class="text-3xl font-bold text-primary mb-2">~200-250</h3>
+                    <p class="text-gray-600 dark:text-gray-300">New cases in Jordan annually</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">(Jordan Cancer Registry)</p>
+                </div>
+                <div class="stat-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-chart-line text-orange-500 text-4xl mb-3"></i>
+                    <h3 class="text-3xl font-bold text-orange-500 mb-2">2-3%</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Of all cancers in Jordan</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">(National Cancer Registry)</p>
+                </div>
+                <div class="stat-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-check-circle text-green-500 text-4xl mb-3"></i>
+                    <h3 class="text-3xl font-bold text-green-500 mb-2">80-90%</h3>
+                    <p class="text-gray-600 dark:text-gray-300">5-year survival rate when detected early</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">(Early Detection)</p>
+                </div>
+            </div>
+
+            <!-- Global Statistics -->
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">
+                <i class="fas fa-globe mr-2 text-primary"></i>Global Statistics
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base">Worldwide Oral Cancer Data</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="stat-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-users text-primary text-4xl mb-3"></i>
+                    <h3 class="text-3xl font-bold text-primary mb-2">377,713</h3>
+                    <p class="text-gray-600 dark:text-gray-300">New cases worldwide annually</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">(GLOBOCAN 2020)</p>
+                </div>
+                <div class="stat-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-heartbeat text-red-500 text-4xl mb-3"></i>
+                    <h3 class="text-3xl font-bold text-red-500 mb-2">177,757</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Deaths worldwide annually</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">(GLOBOCAN 2020)</p>
+                </div>
+                <div class="stat-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
+                    <i class="fas fa-exclamation-triangle text-yellow-500 text-4xl mb-3"></i>
+                    <h3 class="text-3xl font-bold text-yellow-500 mb-2">50%</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Overall 5-year survival rate globally</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">(WHO)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Oral Cancer Section -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl sm:text-4xl font-bold mb-8 text-center">What is Oral Cancer?</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-base sm:text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
+                        Oral cancer, also known as mouth cancer or oral cavity cancer, refers to cancer that develops in any part of the mouth, including the lips, tongue, gums, floor of the mouth, roof of the mouth (hard and soft palate), inner lining of the cheeks, and the area behind the wisdom teeth.
+                    </p>
+                    <p class="text-base sm:text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
+                        Most oral cancers are squamous cell carcinomas, which begin in the flat, thin cells that line the mouth and throat. Early detection is crucial as it significantly improves treatment outcomes and survival rates.
+                    </p>
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 mt-6">
+                        <p class="text-yellow-800 dark:text-yellow-300 font-semibold mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Warning Signs:</p>
+                        <ul class="list-disc list-inside text-yellow-700 dark:text-yellow-400 space-y-1 text-sm sm:text-base">
+                            <li>Persistent mouth sores that don't heal</li>
+                            <li>White or red patches in the mouth</li>
+                            <li>Lumps or thickening of tissues</li>
+                            <li>Difficulty swallowing or chewing</li>
+                            <li>Persistent sore throat or hoarseness</li>
+                            <li>Numbness in the mouth or lips</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-400 to-pink-400 dark:from-purple-600 dark:to-pink-600 rounded-lg shadow-xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-4">Risk Factors</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-smoking text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Tobacco Use</h4>
+                                <p class="text-sm opacity-90">Cigarettes, cigars, pipes, chewing tobacco, and snuff significantly increase risk</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-wine-glass text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Alcohol Consumption</h4>
+                                <p class="text-sm opacity-90">Heavy drinking increases risk, especially when combined with tobacco</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-virus text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">HPV Infection</h4>
+                                <p class="text-sm opacity-90">Human papillomavirus, particularly HPV-16, is linked to oral cancers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-sun text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Sun Exposure</h4>
+                                <p class="text-sm opacity-90">Prolonged sun exposure increases risk of lip cancer</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-dna text-2xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg">Other Factors</h4>
+                                <p class="text-sm opacity-90">Age (over 40), gender (more common in men), poor nutrition, weakened immune system</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Oral Cancer Section -->
+    <section id="types" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl sm:text-4xl font-bold mb-4 text-center">Types of Oral Cancer</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto text-base sm:text-lg">
+                Understanding the different types of oral cancer helps in early detection and appropriate treatment
+            </p>
+
+            <div class="space-y-8">
+                <!-- Squamous Cell Carcinoma -->
+                <div class="cancer-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-3">Squamous Cell Carcinoma</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 text-base sm:text-lg">
+                                The most common type, accounting for over 90% of oral cancers. It develops in the squamous cells that line the mouth and throat.
+                            </p>
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 mb-4">
+                                <h4 class="font-semibold text-blue-900 dark:text-blue-300 mb-2">Characteristics:</h4>
+                                <ul class="list-disc list-inside text-blue-800 dark:text-blue-400 space-y-1 text-sm sm:text-base">
+                                    <li>Can appear as white or red patches (leukoplakia or erythroplakia)</li>
+                                    <li>May present as ulcers that don't heal</li>
+                                    <li>Often rough or crusty in texture</li>
+                                    <li>Can develop anywhere in the oral cavity</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <strong>Reference:</strong> <span class="italic">Neville, B. W., & Day, T. A. (2002). Oral cancer and precancerous lesions. CA: A Cancer Journal for Clinicians, 52(4), 195-215.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="rounded-lg h-64 overflow-hidden">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/d22e3caaf75d7d99491df6aeecebe1f5cb6aae0199e111d0bb76f69509cc245a?w=2640&h=1274" alt="Squamous Cell Carcinoma" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verrucous Carcinoma -->
+                <div class="cancer-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-3">Verrucous Carcinoma</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 text-base sm:text-lg">
+                                A rare, slow-growing variant of squamous cell carcinoma that rarely metastasizes. It has a warty, cauliflower-like appearance.
+                            </p>
+                            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 mb-4">
+                                <h4 class="font-semibold text-green-900 dark:text-green-300 mb-2">Characteristics:</h4>
+                                <ul class="list-disc list-inside text-green-800 dark:text-green-400 space-y-1 text-sm sm:text-base">
+                                    <li>Appears as a white, thick, raised lesion</li>
+                                    <li>Warty or cauliflower-like surface texture</li>
+                                    <li>Slow-growing and locally invasive</li>
+                                    <li>Common sites: buccal mucosa, gingiva, tongue</li>
+                                    <li>Associated with tobacco use, especially smokeless tobacco</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <strong>Reference:</strong> <span class="italic">Koch, B. B., et al. (2001). National survey of head and neck verrucous carcinoma. Cancer, 92(1), 110-120.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="rounded-lg h-64 overflow-hidden">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/38ba38f260ec929fed05c8b1a9a4de0bc7181b2f734e2d7b7153c32ef2cfac42?w=850&h=531" alt="Verrucous Carcinoma" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minor Salivary Gland Carcinomas -->
+                <div class="cancer-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-3">Minor Salivary Gland Carcinomas</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 text-base sm:text-lg">
+                                A group of cancers that develop in the minor salivary glands scattered throughout the mouth, particularly in the palate, tongue, and lips.
+                            </p>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 mb-4">
+                                <h4 class="font-semibold text-purple-900 dark:text-purple-300 mb-2">Common Types Include:</h4>
+                                <ul class="list-disc list-inside text-purple-800 dark:text-purple-400 space-y-1 text-sm sm:text-base">
+                                    <li><strong>Mucoepidermoid carcinoma</strong> - Most common type</li>
+                                    <li><strong>Adenoid cystic carcinoma</strong> - Slow-growing but aggressive</li>
+                                    <li><strong>Polymorphous adenocarcinoma</strong> - Usually in the palate</li>
+                                    <li><strong>Acinic cell carcinoma</strong> - Rare in minor glands</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <strong>Reference:</strong> <span class="italic">Barnes, L., et al. (2005). Pathology and Genetics of Head and Neck Tumours. WHO Classification of Tumours, IARC Press.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="rounded-lg h-64 overflow-hidden">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/57092977beb1562870cb0211ea11c6d9495612093f3fa6a0d0e838342a1a1240?w=1280&h=510" alt="Minor Salivary Gland Carcinoma" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lymphomas -->
+                <div class="cancer-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-3">Oral Lymphomas</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 text-base sm:text-lg">
+                                Cancers of the lymphatic tissue in the oral cavity, most commonly Non-Hodgkin's lymphoma. These can develop in the tonsils, base of tongue, or other lymphoid tissues.
+                            </p>
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 mb-4">
+                                <h4 class="font-semibold text-indigo-900 dark:text-indigo-300 mb-2">Characteristics:</h4>
+                                <ul class="list-disc list-inside text-indigo-800 dark:text-indigo-400 space-y-1 text-sm sm:text-base">
+                                    <li>May present as painless swelling or mass</li>
+                                    <li>Can affect tonsils, palate, or gingiva</li>
+                                    <li>Often appears as a submucosal swelling</li>
+                                    <li>May be associated with systemic symptoms</li>
+                                    <li>More common in immunocompromised patients</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <strong>Reference:</strong> <span class="italic">Kemp, S., et al. (2008). Oral non-Hodgkin's lymphoma: review of the literature and World Health Organization classification. Oral Surgery, Oral Medicine, Oral Pathology, 105(2), 194-201.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="rounded-lg h-64 overflow-hidden">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/43339e95a14318e3787f094a0a90c2c76a968141a8b26235fd8b07706f02c0a5?w=2563&h=1334" alt="Oral Lymphoma" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Melanoma -->
+                <div class="cancer-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-3">Oral Malignant Melanoma</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 text-base sm:text-lg">
+                                A rare but aggressive form of oral cancer arising from melanocytes. It accounts for less than 2% of all oral malignancies but has a poor prognosis.
+                            </p>
+                            <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4 mb-4">
+                                <h4 class="font-semibold text-red-900 dark:text-red-300 mb-2">Characteristics:</h4>
+                                <ul class="list-disc list-inside text-red-800 dark:text-red-400 space-y-1 text-sm sm:text-base">
+                                    <li>Appears as pigmented (brown, black, blue) or non-pigmented lesion</li>
+                                    <li>Most common sites: hard palate and maxillary gingiva</li>
+                                    <li>Can be flat or raised, irregular borders</li>
+                                    <li>May bleed easily or ulcerate</li>
+                                    <li>Highly aggressive with tendency to metastasize early</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <strong>Reference:</strong> <span class="italic">Hicks, M. J., & Flaitz, C. M. (2000). Oral mucosal melanoma: epidemiology and pathobiology. Oral Oncology, 36(2), 152-169.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="rounded-lg h-64 overflow-hidden">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/c960cbfc32beb1c0f9e25db9838e916c99e8e0784783b95a8d6ecc1fe2d73995?w=2756&h=1407" alt="Oral Malignant Melanoma" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kaposi's Sarcoma -->
+                <div class="cancer-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-3">Kaposi's Sarcoma</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 text-base sm:text-lg">
+                                A vascular tumor caused by Human Herpesvirus 8 (HHV-8), commonly seen in immunocompromised individuals, particularly those with HIV/AIDS.
+                            </p>
+                            <div class="bg-pink-50 dark:bg-pink-900/20 rounded-lg p-4 mb-4">
+                                <h4 class="font-semibold text-pink-900 dark:text-pink-300 mb-2">Characteristics:</h4>
+                                <ul class="list-disc list-inside text-pink-800 dark:text-pink-400 space-y-1 text-sm sm:text-base">
+                                    <li>Appears as purple, red, or brown patches or nodules</li>
+                                    <li>Common sites: palate, gingiva, tongue</li>
+                                    <li>Starts as flat lesions, may become raised</li>
+                                    <li>Can be multifocal (multiple sites)</li>
+                                    <li>Strongly associated with immunosuppression</li>
+                                </ul>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <strong>Reference:</strong> <span class="italic">Antman, K., & Chang, Y. (2000). Kaposi's sarcoma. New England Journal of Medicine, 342(14), 1027-1038.</span>
+                            </p>
+                        </div>
+                        <div>
+                            <div class="rounded-lg h-64 overflow-hidden">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/3ed02e64ac10c1312e77e030f9927f67bef38a9bd0bf416e05da304f58afcbca?w=816&h=360" alt="Kaposi's Sarcoma" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prevention Section -->
+    <section id="prevention" class="py-16 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl sm:text-4xl font-bold mb-4 text-center">Prevention & Early Detection</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto text-base sm:text-lg">
+                Most oral cancers are preventable through lifestyle changes and regular screening
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-red-500 to-orange-500 text-white rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-ban text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Avoid Tobacco</h3>
+                    <p class="text-sm opacity-90">Quit smoking and avoid all tobacco products including cigarettes, cigars, pipes, and smokeless tobacco. Tobacco use is the single largest risk factor for oral cancer.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-500 to-indigo-500 text-white rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-glass-whiskey text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Limit Alcohol</h3>
+                    <p class="text-sm opacity-90">Reduce alcohol consumption. Heavy drinking, especially when combined with tobacco use, significantly increases the risk of oral cancer.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-500 to-teal-500 text-white rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-apple-alt text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Healthy Diet</h3>
+                    <p class="text-sm opacity-90">Eat a balanced diet rich in fruits and vegetables. Proper nutrition strengthens the immune system and may help reduce cancer risk.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-500 to-orange-500 text-white rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-umbrella-beach text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Sun Protection</h3>
+                    <p class="text-sm opacity-90">Use lip balm with SPF and limit sun exposure to reduce the risk of lip cancer. Reapply regularly when outdoors.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-500 to-cyan-500 text-white rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-syringe text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">HPV Vaccination</h3>
+                    <p class="text-sm opacity-90">Get vaccinated against HPV, which can cause certain oral cancers. The vaccine is most effective when given before exposure.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-500 to-rose-500 text-white rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-stethoscope text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Regular Screenings</h3>
+                    <p class="text-sm opacity-90">Visit your dentist regularly for oral cancer screenings. Early detection dramatically improves treatment success rates.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-primary/10 dark:bg-primary/20 rounded-lg p-6 sm:p-8">
+                <h3 class="text-2xl font-bold text-primary mb-4 text-center">Self-Examination Guide</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-6 text-center text-base sm:text-lg">
+                    Perform monthly self-checks to detect changes early. Look for any of the warning signs mentioned above.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">👄</div>
+                        <h4 class="font-semibold mb-1 text-sm sm:text-base">Check Lips</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Examine both lips inside and out</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">👅</div>
+                        <h4 class="font-semibold mb-1 text-sm sm:text-base">Check Tongue</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Examine all sides and underneath</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">😬</div>
+                        <h4 class="font-semibold mb-1 text-sm sm:text-base">Check Gums</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Look for lumps or color changes</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
+                        <div class="text-3xl mb-2">🗣️</div>
+                        <h4 class="font-semibold mb-1 text-sm sm:text-base">Check Throat</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">Examine roof and back of mouth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-3xl sm:text-4xl font-bold mb-8 text-center">References & Resources</h2>
+
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 sm:p-8 mb-8">
+                <h3 class="text-xl font-bold text-primary mb-4">Scientific References</h3>
+                <ol class="list-decimal list-inside space-y-3 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+                    <li class="pl-2">
+                        <strong>GLOBOCAN 2020:</strong> Sung, H., et al. (2021). Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries. <em>CA: A Cancer Journal for Clinicians, 71</em>(3), 209-249.
+                        <a href="https://doi.org/10.3322/caac.21660" target="_blank" class="reference-link ml-2"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li class="pl-2">
+                        <strong>American Cancer Society.</strong> (2023). Oral Cavity and Oropharyngeal Cancer. <em>Cancer Facts & Figures 2023</em>.
+                        <a href="https://www.cancer.org/" target="_blank" class="reference-link ml-2"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li class="pl-2">
+                        Neville, B. W., & Day, T. A. (2002). Oral cancer and precancerous lesions. <em>CA: A Cancer Journal for Clinicians, 52</em>(4), 195-215.
+                        <a href="https://doi.org/10.3322/canjclin.52.4.195" target="_blank" class="reference-link ml-2"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li class="pl-2">
+                        Koch, B. B., et al. (2001). National survey of head and neck verrucous carcinoma: patterns of presentation, care, and outcome. <em>Cancer, 92</em>(1), 110-120.
+                    </li>
+                    <li class="pl-2">
+                        Barnes, L., Eveson, J. W., Reichart, P., & Sidransky, D. (Eds.). (2005). <em>Pathology and Genetics of Head and Neck Tumours</em>. WHO Classification of Tumours, IARC Press.
+                    </li>
+                    <li class="pl-2">
+                        Kemp, S., Gallagher, G., Kabani, S., Noonan, V., & O'Hara, C. (2008). Oral non-Hodgkin's lymphoma: review of the literature and World Health Organization classification with reference to 40 cases. <em>Oral Surgery, Oral Medicine, Oral Pathology, Oral Radiology, and Endodontology, 105</em>(2), 194-201.
+                    </li>
+                    <li class="pl-2">
+                        Hicks, M. J., & Flaitz, C. M. (2000). Oral mucosal melanoma: epidemiology and pathobiology. <em>Oral Oncology, 36</em>(2), 152-169.
+                    </li>
+                    <li class="pl-2">
+                        Antman, K., & Chang, Y. (2000). Kaposi's sarcoma. <em>New England Journal of Medicine, 342</em>(14), 1027-1038.
+                    </li>
+                    <li class="pl-2">
+                        Rivera, C., & Venegas, B. (2014). Histological and molecular aspects of oral squamous cell carcinoma (Review). <em>Oncology Letters, 8</em>(1), 7-11.
+                        <a href="https://doi.org/10.3892/ol.2014.2103" target="_blank" class="reference-link ml-2"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li class="pl-2">
+                        Warnakulasuriya, S. (2009). Global epidemiology of oral and oropharyngeal cancer. <em>Oral Oncology, 45</em>(4-5), 309-316.
+                        <a href="https://doi.org/10.1016/j.oraloncology.2008.06.002" target="_blank" class="reference-link ml-2"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fas fa-link mr-2"></i>Helpful Resources
+                    </h3>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+                        <li>
+                            <a href="https://www.cancer.org/cancer/oral-cavity-and-oropharyngeal-cancer.html" target="_blank" class="reference-link hover:underline flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                American Cancer Society - Oral Cancer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cancer.gov/types/head-and-neck/patient/adult/lip-mouth-treatment-pdq" target="_blank" class="reference-link hover:underline flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                National Cancer Institute - Oral Cavity Cancer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.nidcr.nih.gov/health-info/oral-cancer" target="_blank" class="reference-link hover:underline flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                NIH National Institute of Dental Research
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.oralcancerfoundation.org/" target="_blank" class="reference-link hover:underline flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                Oral Cancer Foundation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.who.int/news-room/fact-sheets/detail/oral-health" target="_blank" class="reference-link hover:underline flex items-center">
+                                <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                                World Health Organization - Oral Health
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <i class="fas fa-phone-alt mr-2"></i>Support & Helplines in Jordan
+                    </h3>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+                        <li class="flex items-start">
+                            <i class="fas fa-hospital text-primary mr-2 mt-1"></i>
+                            <div>
+                                <strong>King Hussein Cancer Center (KHCC):</strong><br>
+                                +962 6 5300460<br>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Queen Rania Al Abdullah Street, Amman</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-volume text-primary mr-2 mt-1"></i>
+                            <div>
+                                <strong>Jordan Cancer Registry:</strong><br>
+                                +962 6 5355000<br>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Ministry of Health</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hands-helping text-primary mr-2 mt-1"></i>
+                            <div>
+                                <strong>King Abdullah University Hospital:</strong><br>
+                                +962 2 7205555<br>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Irbid, Jordan</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-tooth text-primary mr-2 mt-1"></i>
+                            <div>
+                                <strong>Jordan Dental Association:</strong><br>
+                                +962 6 5522570<br>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">For dental screening and referrals</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-md text-primary mr-2 mt-1"></i>
+                            <div>
+                                <strong>University of Jordan Hospital:</strong><br>
+                                +962 6 5355000<br>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Oral Surgery & Pathology Department</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-primary text-white rounded-lg shadow-lg p-6 sm:p-8 text-center">
+                <h3 class="text-2xl font-bold mb-3">Take Action Today</h3>
+                <p class="text-base sm:text-lg mb-4 opacity-90">
+                    Early detection saves lives. Schedule a screening with your dentist or healthcare provider.
+                </p>
+                <p class="text-sm opacity-80">
+                    <i class="fas fa-exclamation-circle mr-2"></i>
+                    If you notice any persistent changes in your mouth, don't wait - seek professional evaluation immediately.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-2 text-sm sm:text-base">
+                <i class="fas fa-ribbon text-red-400 mr-2"></i>
+                World Oral Cancer Awareness Day - April 10th
+            </p>
+            <p class="text-gray-400 text-xs sm:text-sm">
+                This educational resource was created to raise awareness about oral cancer prevention and early detection.
+            </p>
+            <p class="text-primary font-semibold mt-4 text-sm sm:text-base">
+                <i class="fas fa-user-graduate mr-2"></i>
+                Made by Yaman Akour
+            </p>
+            <p class="text-gray-500 text-xs mt-2">
+                For medical advice, always consult with qualified healthcare professionals.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Image upload functionality
+        const imageInputs = {
+            'squamous-cell': 'squamous-cell',
+            'verrucous': 'verrucous',
+            'salivary-gland': 'salivary-gland',
+            'lymphoma': 'lymphoma',
+            'melanoma': 'melanoma',
+            'kaposi': 'kaposi'
+        };
+
+        Object.keys(imageInputs).forEach(key => {
+            const input = document.getElementById(`${key}-input`);
+            const container = document.getElementById(`${key}-container`);
+
+            if (input && container) {
+                input.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file && file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            container.innerHTML = `
+                                <div class="relative h-full">
+                                    <img src="${event.target.result}" alt="Uploaded cancer image" class="uploaded-image w-full h-full object-cover">
+                                    <button onclick="removeImage('${key}')"
+                                            class="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center transition shadow-lg">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <div class="absolute bottom-2 left-2 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded text-xs">
+                                        ${file.name}
+                                    </div>
+                                </div>
+                            `;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        });
+
+        // Remove image function
+        window.removeImage = function(key) {
+            const container = document.getElementById(`${key}-container`);
+            const input = document.getElementById(`${key}-input`);
+            if (container && input) {
+                input.value = '';
+                container.innerHTML = `
+                    <div class="text-center text-white p-6">
+                        <i class="fas fa-image text-5xl mb-3 opacity-70"></i>
+                        <p class="text-lg font-semibold mb-2">Add Image Here</p>
+                        <p class="text-sm opacity-80 mb-4">Upload a clinical photo</p>
+                        <button onclick="document.getElementById('${key}-input').click()"
+                                class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-4 py-2 rounded-lg transition text-base">
+                            <i class="fas fa-upload mr-2"></i>Upload Image
+                        </button>
+                    </div>
+                `;
+            }
+        };
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.cancer-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
